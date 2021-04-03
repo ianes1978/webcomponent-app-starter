@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.css"  crossorigin="anonymous">
+
+
+    <!-- Load polyfills -->
+    <script src="libs/webcomponents-loader.js" defer> </script>
+
+    <!-- Load component when polyfills are definitely ready -->
+    <script type="module">
+        // Take care of cases in which the browser runs this
+        // script before it has finished running 
+        // webcomponents-loader.js (e.g. Firefox script execution order)
+        window.WebComponents = window.WebComponents || {
+            waitFor(cb) { addEventListener('WebComponentsReady', cb) }
+            }
+
+        WebComponents.waitFor(async () => {
+            await import('./main.js');
+        });
+    </script>
+</head>
+
+<body>
+    <my-app></my-app>
+</body>
+
+</html>
