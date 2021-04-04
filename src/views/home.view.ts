@@ -5,6 +5,9 @@ import { store } from '../store/store'
 
 import { addOne, subOne } from '../store/store-counter'
 import '../components/bs-component';
+import '../components/ex-counter';
+import '../components/ex-input-binding';
+import '../components/ex-emitter/ex-emitter';
 
 @customElement("home-view")
 class HomeView extends connect(store)(LitElement) {
@@ -12,9 +15,8 @@ class HomeView extends connect(store)(LitElement) {
     static get styles() {
         return [];
     }
-    @property() _counter = "";
+
     stateChanged(state) {
-        this._counter = state.counter;
     }
 
     render() {
@@ -29,13 +31,13 @@ class HomeView extends connect(store)(LitElement) {
                     </div>
                 </div>
                 <bs-component></bs-component>
-                
-                <h5>counter variable stored in redux :</h5>
-                <div class="input-group mb-3 btn-group" style="width:300px">
-                    <button @click="${() => store.dispatch(subOne())}" type="button" class="btn  btn-primary">-</button>
-                    <input type="number" class="form-control" value="${this._counter}">
-                    <button @click="${() => store.dispatch(addOne())}" type="button" class="btn  btn-primary">+</button>
-                </div>
+                <h3 class="mt-3"> Some webcomponent examples: </h3>
+                <ex-counter class="mt-3"></ex-counter>
+                <hr>
+                <ex-input-binding style=" margin-top: 25px;"></ex-input-binding>
+                <hr>
+                <ex-emitter style=" margin-top: 25px;"></ex-emitter>
+
 
             `;
     }
