@@ -12,14 +12,7 @@ import './views/pageTwo.view';
 class MyApp extends connect(store)(LitElement) {
   @globalStyle()
   static get styles() {
-    return [css`
-         .page {
-          display: none;
-        }
-        .page[active] {
-          display: block;
-        }
-    `];
+    return [css``];
   }
   @property() _page = "";
   firstUpdated() {
