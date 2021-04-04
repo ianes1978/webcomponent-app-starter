@@ -10,7 +10,7 @@ import '../components/ex-input-binding';
 import '../components/ex-emitter/ex-emitter';
 import '../components/ex-binding/ex-binding';
 import '../components/ex-attribute/ex-attribute';
-import '../components/ex-emitter copy/ex-trigger-method';
+import '../components/ex-trigger/ex-trigger-method';
 
 @customElement("home-view")
 class HomeView extends connect(store)(LitElement) {
