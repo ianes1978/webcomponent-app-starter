@@ -14,7 +14,6 @@ class MyApp extends connect(store)(LitElement) {
   static get styles() {
     return [css``];
   }
-  @property() _page = "";
   firstUpdated() {
     const router = new Router(this.shadowRoot.getElementById('router'));
     router.setRoutes([
