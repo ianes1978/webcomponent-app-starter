@@ -5,7 +5,7 @@ the library use are:
 *   "pwa-helpers": "^0.9.1"
 *    and Bootstrap for styling
 ## intro
-![screen](https://github.com/ianes1978/webcomponent-app-starter/blob/master/images/screenshot3.PNG)
+![screen](https://github.com/ianes1978/webcomponent-app-starter/blob/master/images/screenshot3.png)
 
 
 
