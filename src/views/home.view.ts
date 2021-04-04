@@ -1,12 +1,13 @@
-import { html, css, property, customElement } from "lit-element";
+import { html, css, property, customElement, LitElement } from "lit-element";
 import { connect } from 'pwa-helpers/connect-mixin.js';
 import { globalStyle } from "../core/decorators";
 import { store } from '../store/store'
-import { PageViewElement } from '../components/page-view-element'
+
+import { addOne, subOne } from '../store/store-counter'
 import '../components/bs-component';
 
 @customElement("home-view")
-class HomeView extends connect(store)(PageViewElement) {
+class HomeView extends connect(store)(LitElement) {
     @globalStyle()
     static get styles() {
         return [];
@@ -28,7 +29,14 @@ class HomeView extends connect(store)(PageViewElement) {
                     </div>
                 </div>
                 <bs-component></bs-component>
-                counter : ${this._counter}
+                
+                <h5>counter variable stored in redux :</h5>
+                <div class="input-group mb-3 btn-group" style="width:300px">
+                    <button @click="${() => store.dispatch(subOne())}" type="button" class="btn  btn-primary">-</button>
+                    <input type="number" class="form-control" value="${this._counter}">
+                    <button @click="${() => store.dispatch(addOne())}" type="button" class="btn  btn-primary">+</button>
+                </div>
+
             `;
     }
 }

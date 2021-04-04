@@ -1,11 +1,8 @@
-
 import { LitElement, html, css, property, customElement } from 'lit-element';
 import { store } from './store/store'
-import { actionNavigate } from './store/store-app'
-import { connect, installRouter } from 'pwa-helpers'
+import { connect } from 'pwa-helpers'
 import { globalStyle } from './core/decorators'
-import './components/first-component';
-import './components/css-component';
+import { Router } from '@vaadin/router';
 import './components/nav-bar';
 import './views/home.view';
 import './views/pageOne.view';
@@ -26,10 +23,14 @@ class MyApp extends connect(store)(LitElement) {
   }
   @property() _page = "";
   firstUpdated() {
-    installRouter((location) => store.dispatch(actionNavigate(location)));
+    const router = new Router(this.shadowRoot.getElementById('router'));
+    router.setRoutes([
+      { path: '/', component: 'home-view' },
+      { path: '/pageOne', component: 'page-one-view' },
+      { path: '/pageTwo', component: 'page-two-view' },
+    ]);
   }
   stateChanged(state) {
-    this._page = state.app.page;
   }
   render() {
     return html`
@@ -38,14 +39,10 @@ class MyApp extends connect(store)(LitElement) {
           <div class="container">
             <div class="row">
               <div class="col">
-                <home-view class="page" ?active="${this._page === ''}"></home-view>
-                <page-one-view class="page" ?active="${this._page === 'pageOne'}"></page-one-view>
-                <page-two-view class="page" ?active="${this._page === 'pageTwo'}"></page-two-view>
+                <div id="router"></div>
               </div>
             </div>
           </div>
-          </div>
-          
     `;
   }
 }

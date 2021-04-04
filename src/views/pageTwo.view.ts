@@ -1,12 +1,12 @@
-import { html, css, property, customElement } from "lit-element";
+import { html, css, property, customElement, LitElement } from "lit-element";
 import { connect } from 'pwa-helpers/connect-mixin.js';
 import { globalStyle } from "../core/decorators";
 import { store } from '../store/store'
-import { PageViewElement } from '../components/page-view-element'
+
 import '../components/css-component';
 
 @customElement("page-two-view")
-class PageTwoView extends connect(store)(PageViewElement) {
+class PageTwoView extends connect(store)(LitElement) {
     @globalStyle()
     static get styles() {
         return [];
