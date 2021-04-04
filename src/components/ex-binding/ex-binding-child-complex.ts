@@ -2,8 +2,8 @@ import { LitElement, html, css, property, customElement } from "lit-element";
 import { globalStyle } from "../../core/decorators";
 
 
-@customElement("ex-emitter-child")
-class ExEmitterChild extends LitElement {
+@customElement("ex-binding-child-complex")
+class ExBindingChildComplex extends LitElement {
   @globalStyle()
   static get styles() {
     return [css`
@@ -12,17 +12,12 @@ class ExEmitterChild extends LitElement {
           }
     `];
   }
-  @property({ type: String }) valueCustom = "";
+  @property({ type: Object }) valueCustom: { a: { b: Array<any>, c: { d: number } } } = { a: { b: [], c: { d: 0 } } };
 
 
   render() {
     return html`
-                <h5>child that emit to his parent :</h5>
-                <div class="d-flex">
-                  <input style="width:200px" type="text" class="form-control" value="${this.valueCustom}"
-                    @keydown="${this.emitterMethod}">
-                
-                </div>
+            valueCustom.a.c.d => ${this.valueCustom.a.c.d}
     `;
   }
 

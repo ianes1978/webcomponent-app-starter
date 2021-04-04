@@ -18,7 +18,7 @@ class ExEmitter extends LitElement {
 
   render() {
     return html`
-          <h5>Emit event from Parent to Child component:</h5>
+          <h5>Emit event from Child to Parent component and pass value:</h5>
           Value emitted from child to parent: <b>${this._text}</b>
           <ex-emitter-child valueCustom="${this._text}" @changeValue="${(e) => { this._text = e.detail.value }}">
           </ex-emitter-child>

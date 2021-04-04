@@ -8,6 +8,9 @@ import '../components/bs-component';
 import '../components/ex-counter';
 import '../components/ex-input-binding';
 import '../components/ex-emitter/ex-emitter';
+import '../components/ex-binding/ex-binding';
+import '../components/ex-attribute/ex-attribute';
+import '../components/ex-emitter copy/ex-trigger-method';
 
 @customElement("home-view")
 class HomeView extends connect(store)(LitElement) {
@@ -37,6 +40,13 @@ class HomeView extends connect(store)(LitElement) {
                 <ex-input-binding style=" margin-top: 25px;"></ex-input-binding>
                 <hr>
                 <ex-emitter style=" margin-top: 25px;"></ex-emitter>
+                <hr>
+                <ex-attribute></ex-attribute>
+                <hr>
+                <ex-trigger-method></ex-trigger-method>
+                <hr>
+                
+                <ex-binding style=" margin-top: 25px;"></ex-binding>
 
 
             `;
