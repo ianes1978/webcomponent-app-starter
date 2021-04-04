@@ -24,7 +24,6 @@ class MyApp extends connect(store)(LitElement) {
               </div>
             </div>
           </div>
-          </div>
     `;
   }
 }
