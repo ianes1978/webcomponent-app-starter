@@ -27,7 +27,6 @@ class MyApp extends connect(store)(LitElement) {
   }
   render() {
     return html`
-    
           <nav-bar></nav-bar>
           <div class="container">
             <div class="row">
