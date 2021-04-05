@@ -3,3 +3,4 @@ node_modules/
 test/integration/screenshots-current/
 _site/
 .DS_Store
+dist/

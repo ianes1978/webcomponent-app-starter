@@ -21,7 +21,7 @@ class NavBar extends LitElement {
         <div class="collapse navbar-collapse ${this.show ? 'show' : ''}" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/">Home</a>
+              <a class="nav-link active" aria-current="page" href="./">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="pageOne">Page 1</a>
