@@ -1,13 +1,13 @@
 import { LitElement, html, css, property, customElement } from "lit-element";
-import { globalStyle } from "../../core/decorators";
+import { globalStyle } from "../../core/lit-tools";
 import './ex-attribute-child'
 
 
 @customElement("ex-attribute")
 class ExAttribute extends LitElement {
-  @globalStyle()
   static get styles() {
-    return [css`
+    return [globalStyle,
+      css`
           :host{
               display: block;
           }

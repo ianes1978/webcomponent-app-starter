@@ -1,14 +1,16 @@
 import { LitElement, html, css, property, customElement } from "lit-element";
-import { globalStyle } from "../../core/decorators";
+import { globalStyle } from "../../core/lit-tools";
 import './ex-binding-child'
 import './ex-binding-child-complex'
 
 
 @customElement("ex-binding")
 class ExBinding extends LitElement {
-  @globalStyle()
+
   static get styles() {
-    return [css`
+    return [
+      globalStyle,
+      css`
           :host{
               display: block;
           }

@@ -15,7 +15,7 @@
   "dependencies": {
     "@reduxjs/toolkit": "^1.5.1",
     "@vaadin/router": "^1.7.4",
-    "lit-element": "^2.4.0",
+    "lit-element": "^3.0.0-pre.4",
     "pwa-helpers": "^0.9.1"
   },
   "devDependencies": {

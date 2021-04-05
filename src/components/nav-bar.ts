@@ -1,12 +1,11 @@
 import { LitElement, html, css, property, customElement } from "lit-element";
-import { globalStyle } from "../core/decorators";
+import { globalStyle } from "../core/lit-tools";
 
 
 @customElement("nav-bar")
 class NavBar extends LitElement {
-  @globalStyle()
   static get styles() {
-    return [];
+    return [globalStyle];
   }
   @property({ type: Boolean }) show = false;
   render() {

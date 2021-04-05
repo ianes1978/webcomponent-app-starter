@@ -1,7 +1,7 @@
 import { LitElement, html, css, property, customElement } from 'lit-element';
 import { store } from './store/store'
 import { connect } from 'pwa-helpers'
-import { globalStyle } from './core/decorators'
+import { globalStyle } from './core/lit-tools'
 import { Router } from '@vaadin/router';
 import './components/nav-bar';
 import './pageRouter';
@@ -9,9 +9,11 @@ import './pageRouter';
 
 @customElement("my-app")
 class MyApp extends connect(store)(LitElement) {
-  @globalStyle()
   static get styles() {
-    return [css``];
+    return [
+      globalStyle,
+      css``
+    ];
   }
 
   render() {

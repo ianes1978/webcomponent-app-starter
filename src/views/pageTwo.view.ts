@@ -1,15 +1,15 @@
 import { html, css, property, customElement, LitElement } from "lit-element";
 import { connect } from 'pwa-helpers/connect-mixin.js';
-import { globalStyle } from "../core/decorators";
+import { globalStyle } from "../core/lit-tools";
 import { store } from '../store/store'
 import '../components/first-component';
 
 
 @customElement("page-two-view")
 class PageTwoView extends connect(store)(LitElement) {
-    @globalStyle()
+
     static get styles() {
-        return [];
+        return [globalStyle];
     }
     render() {
         return html`

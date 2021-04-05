@@ -1,13 +1,15 @@
 import { LitElement, html, css, property, customElement } from "lit-element";
-import { globalStyle } from "../../core/decorators";
+import { globalStyle } from "../../core/lit-tools";
 import './ex-emitter-child'
 
 
 @customElement("ex-emitter")
 class ExEmitter extends LitElement {
-  @globalStyle()
+
   static get styles() {
-    return [css`
+    return [
+      globalStyle,
+      css`
           :host{
               display: block;
           }

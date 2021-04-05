@@ -1,11 +1,13 @@
 import { LitElement, html, css, property, customElement } from "lit-element";
-import { globalStyle } from "../../core/decorators";
+import { globalStyle } from "../../core/lit-tools";
 
 @customElement("ex-trigger-method-child")
 export class ExTriggerMethodChild extends LitElement {
-  @globalStyle()
+
   static get styles() {
-    return [css`
+    return [
+      globalStyle,
+      css`
           :host{
               display: block;
           }

@@ -1,14 +1,18 @@
 import { LitElement, html, css, property, customElement } from "lit-element";
-import { globalStyle } from "../core/decorators";
+import { globalStyle } from "../core/lit-tools";
 
 
 @customElement("bs-component")
 class BsComponent extends LitElement {
-  @globalStyle()
+
   static get styles() {
-    return [css`
-     
-    `];
+
+    return [globalStyle];
+  }
+  constructor() {
+    super()
+
+    console.log('AAA')
   }
   @property() myString = "World";
   @property({ type: Array }) myArray = ["an", "array", "of", "test", "data"];
@@ -16,6 +20,7 @@ class BsComponent extends LitElement {
 
 
   render() {
+
     return html`
       <h3>Webcomponent with external style (Bootstrap)</h3>
       <div class="card">

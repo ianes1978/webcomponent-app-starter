@@ -1,6 +1,6 @@
 
 import { LitElement, html, customElement, property, css } from 'lit-element';
-import { globalStyle } from "../core/decorators";
+import { globalStyle } from "../core/lit-tools";
 
 
 @customElement('css-component')
@@ -8,9 +8,9 @@ class cssComponent extends LitElement {
   @property() myString = "World";
   @property({ type: Array }) myArray = ["an", "array", "of", "test", "data"];
   @property({ type: Boolean }) myBool = true;
-  @globalStyle()
   static get styles() {
     return [
+      globalStyle,
       css`
       .btn-secondary{
         background-color: violet

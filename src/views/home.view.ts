@@ -1,6 +1,6 @@
 import { html, css, property, customElement, LitElement } from "lit-element";
 import { connect } from 'pwa-helpers/connect-mixin.js';
-import { globalStyle } from "../core/decorators";
+import { globalStyle } from "../core/lit-tools";
 import { store } from '../store/store'
 
 import { addOne, subOne } from '../store/store-counter'
@@ -14,9 +14,9 @@ import '../components/ex-trigger/ex-trigger-method';
 
 @customElement("home-view")
 class HomeView extends connect(store)(LitElement) {
-    @globalStyle()
+
     static get styles() {
-        return [];
+        return [globalStyle];
     }
 
     stateChanged(state) {

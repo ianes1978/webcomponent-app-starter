@@ -1,5 +1,5 @@
 import { LitElement, html, css, property, customElement } from "lit-element";
-import { globalStyle } from "../core/decorators";
+import { globalStyle } from "../core/lit-tools";
 import { store } from '../store/store'
 import { connect } from 'pwa-helpers'
 import { addOne, subOne } from '../store/store-counter'
@@ -7,9 +7,11 @@ import { addOne, subOne } from '../store/store-counter'
 
 @customElement("ex-counter")
 class ExCounter extends connect(store)(LitElement) {
-  @globalStyle()
+
   static get styles() {
-    return [css`
+    return [
+      globalStyle,
+      css`
       :host{
         display: block;
       }
