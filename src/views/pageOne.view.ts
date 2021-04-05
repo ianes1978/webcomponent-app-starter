@@ -1,9 +1,9 @@
-import { html, css, property, customElement,LitElement } from "lit-element";
+import { html, css, property, customElement, LitElement } from "lit-element";
 import { connect } from 'pwa-helpers/connect-mixin.js';
 import { globalStyle } from "../core/decorators";
 import { store } from '../store/store'
-import '../components/first-component';
 
+import '../components/css-component';
 @customElement("page-one-view")
 class PageOneView extends connect(store)(LitElement) {
     @globalStyle()
@@ -21,7 +21,7 @@ class PageOneView extends connect(store)(LitElement) {
         
             </div>
         </div>
-        <first-component></first-component>
+        <css-component></css-component>
             `;
     }
 }

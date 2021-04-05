@@ -2,8 +2,8 @@ import { html, css, property, customElement, LitElement } from "lit-element";
 import { connect } from 'pwa-helpers/connect-mixin.js';
 import { globalStyle } from "../core/decorators";
 import { store } from '../store/store'
+import '../components/first-component';
 
-import '../components/css-component';
 
 @customElement("page-two-view")
 class PageTwoView extends connect(store)(LitElement) {
@@ -23,7 +23,8 @@ class PageTwoView extends connect(store)(LitElement) {
                     In this case without styles
                 </div>
             </div>
-            <css-component></css-component>
+            
+            <first-component></first-component>
             `;
     }
 }

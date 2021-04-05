@@ -6,10 +6,8 @@ import { globalStyle } from "../core/decorators";
 class BsComponent extends LitElement {
   @globalStyle()
   static get styles() {
-    return [ css`
-      .btn-secondary{
-        background-color: violet
-      }
+    return [css`
+     
     `];
   }
   @property() myString = "World";
@@ -34,8 +32,8 @@ class BsComponent extends LitElement {
             ${this.myArray.map((i) => html`<li>${i}</li>`)}
           </ul>
           ${this.myBool
-            ? html`<p>Render some HTML if myBool is true</p>`
-            : html`<p>Render some other HTML if myBool is false</p>`}
+        ? html`<p>Render some HTML if myBool is true</p>`
+        : html`<p>Render some other HTML if myBool is false</p>`}
         </div>
       </div>
     `;
